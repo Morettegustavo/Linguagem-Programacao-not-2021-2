@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
+=======
+<html lang="pt-br>
+>>>>>>> 722fa5d7decbbe00405a3bfd2de096ad01acfb3b
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Document</title>
 </head>
 <body>
@@ -12,6 +17,18 @@
         /*
         Peça ao usuário para informar um ano e determine se é bissexto pela regra: 
         1) Se o ano divide por 400 é bissexto; *OU* 
+=======
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+        Peça ao usuário para informar um ano e determine
+        se é bissexto pela regra:
+        1) Se o ano divide por 400 é bissexto; *OU*
+>>>>>>> 722fa5d7decbbe00405a3bfd2de096ad01acfb3b
         2) se divide por 4 *E* não divide por 100, é bissexto
         Alguns anos para testar:
         1900: não é
@@ -22,6 +39,7 @@
         2000: bissexto
         2013: não é
         A regra vale para anos >= 1582
+<<<<<<< HEAD
         */  
 
         // Entrada
@@ -36,5 +54,22 @@
             window.alert(`O ano ${ano} não é bissexto.`)
         }
     </script>
+=======
+        */
+        let ano = parseInt(prompt(`Informe um ano igual ou maior 1582: `))
+
+        if(isNaN(ano) || ano < 1582){
+            window.alert(`[ERRO] Informe um ano valido!`)
+        }else if(ano % 400 === 0 || ano % 4 === 0 && ano % 100 !== 0){
+            window.alert(`O ano ${ano} é Bissexto`)
+        } else{
+            window.alert(`O ano ${ano} não é bissexto.`)
+        }
+
+    </script>
+
+
+
+>>>>>>> 722fa5d7decbbe00405a3bfd2de096ad01acfb3b
 </body>
 </html>
