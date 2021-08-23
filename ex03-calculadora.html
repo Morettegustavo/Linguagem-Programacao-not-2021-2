@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+        Solicite ao usuário para informar dois números e um operador
+        matemático. Você usará três prompt(), um para cada número e
+        o terceiro para o operador.
+        Aceite os seguintes operadores:
+        + => adição
+        - => subtração
+        *, X ou x => multiplicação
+        / ou : => divisão
+        Efetue o cálculo apropriado de acordo com o operador informado
+        e informe o resultado usando document.write().
+        */
+
+        // Entrada
+        let num1 = Number(window.prompt("Informe um número: "))
+        let num2 = Number(window.prompt("Informe outro número: "))
+        let oper = window.prompt("Informe o operador desejado:   \n + para Adição. \n - para subtração. \n *, X ou x para multiplicação. \n / ou : para divisão.")
+
+        // Operação
+        if(isNaN(num1) || isNaN(num2)){
+            window.alert(`[ERRO]: não é possível efetuar operação aritmética com os valores informados!!`)
+        }else if(oper === "+"){
+            document.write(`${num1} + ${num2} = ${num1 + num2}`)
+
+        }else if(oper === "-"){
+            document.write(`${num1} - ${num2} = ${num1 - num2}`)
+
+        }else if(oper === "*" || oper === "X" || oper ==="x"){
+            document.write(`${num1} * ${num2} = ${num1 * num2}`)
+
+        }else if(oper === ":" || oper === "/"){
+            document.write(`${num1} / ${num2} = ${num1 / num2}`)
+
+        }else{
+            window.alert(`[ERRO]: operador inválido!`)
+
+        }
+    </script>
+</body>
+</html>
