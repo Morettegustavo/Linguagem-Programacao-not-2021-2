@@ -24,7 +24,11 @@
             9              J            
         Assim, uma placa tradicional ABC-1234, no formato do padrão Mercosul, ficaria ABC-1C34. Peça para o usuário informar um dígito válido entre 0 a 9. Com o loop do..while, faça a validação, repetindo a solicitação até que a resposta obtida seja válida. Em seguida, usando a estrutura de decisão switch..case, informe ao usuário a letra correspondente ao dígito informado.*/
 
+        // Entrada de dados
+        let num
+        let corresp
 
+<<<<<<< HEAD
          // Entrada de dados
         let num
         let corresp
@@ -33,6 +37,12 @@
             num = parseInt(prompt(`Informe um dígito entre 0 a 9.`))
         }while (isNaN(num) || num < 0 || num > 10)
 
+=======
+        do{
+            let num = parseInt(prompt(`Informe um dígito entre 0 a 9.`))
+        }while(isNaN(num) || num < 0 || num > 10)
+        
+>>>>>>> 47d51773d8e6958a89d1c036d341193b87f04b48
         // Operação
         switch (num){
             case 0:
@@ -65,8 +75,15 @@
                 break;
             case 9:
                 corresp = "J"
+<<<<<<< HEAD
         }
         window.alert(`O número digitado foi ${num} o valor correspondente é ${corresp}`)
+=======
+                break;
+        }
+        window.alert(`O número digitado foi ${num} o valor correspondente é ${corresp}`)
+        
+>>>>>>> 47d51773d8e6958a89d1c036d341193b87f04b48
     </script>
 </body>
 </html>
