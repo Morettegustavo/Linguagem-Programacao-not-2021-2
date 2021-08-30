@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Placa mercosul</title>
 </head>
 <body>
     
@@ -25,7 +25,48 @@
         Assim, uma placa tradicional ABC-1234, no formato do padrão Mercosul, ficaria ABC-1C34. Peça para o usuário informar um dígito válido entre 0 a 9. Com o loop do..while, faça a validação, repetindo a solicitação até que a resposta obtida seja válida. Em seguida, usando a estrutura de decisão switch..case, informe ao usuário a letra correspondente ao dígito informado.*/
 
 
-        
+         // Entrada de dados
+        let num
+        let corresp
+
+        do{
+            num = parseInt(prompt(`Informe um dígito entre 0 a 9.`))
+        }while (isNaN(num) || num < 0 || num > 10)
+
+        // Operação
+        switch (num){
+            case 0:
+                // corresp: correspondente
+                corresp = "A"
+                break;
+            case 1:
+                corresp = "B"
+                break;
+            case 2:
+                corresp = "C"
+                break;
+            case 3:
+                corresp = "D"
+                break;
+            case 4:
+                corresp = "E"
+                break;
+            case 5:
+                corresp = "F"
+                break;
+            case 6:
+                corresp = "G"
+                break;
+            case 7:
+                corresp = "H"
+                break;
+            case 8:
+                corresp = "I"
+                break;
+            case 9:
+                corresp = "J"
+        }
+        window.alert(`O número digitado foi ${num} o valor correspondente é ${corresp}`)
     </script>
 </body>
 </html>
