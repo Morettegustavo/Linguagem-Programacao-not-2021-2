@@ -23,6 +23,7 @@
         }while (isNaN(comprimento) || comprimento <= 200)
 
         // Operação
+        /*
         while (km <= comprimeto){
             // Verificando os pedágio
             if(km % 31 === 0){
@@ -35,7 +36,17 @@
 
             km++ // Incrementa o quilômetro percorrido
         }
-
+        */
+       for(let km = 1; km <= comprimento; km++){
+           // Verificando os pedágio
+           if(km % 31 === 0){
+                document.write(`O km ${km} tem um pedágio <br>`)
+            }
+            // Verificando os postos de saúde 
+            if(km % 23 === 0){
+                document.write(`O Km ${km} tem um posto de atendimento ao usuário <br>`)
+            }
+       }
     </script>
 </body>
 </html>

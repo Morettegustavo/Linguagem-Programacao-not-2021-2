@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    
+    <script>
+        /*    
+        Peça ao usuário para informar dois números inteiros diferentes.    
+        Use do..while para garantir que os números sejam válidos e diferentes entre si.
+        Utilizando um loop for, calcule a somatória de todos os números entre os dois valores informados (inclusive).
+        Por exemplo, se os números informados forem 20 e 25, você somará 20 + 21 + 22 + 23 + 24 + 25.
+        */
+
+        // Entrada
+        let num1
+        let num2
+        let i
+        let f
+        let soma = 0
+
+        do{
+            num1 = parseInt(window.prompt(`Informe um número: `))
+            
+        } while (isNaN(num1))
+        
+        do{
+            num2 = parseInt(window.prompt(`Informe um número diferente do primeiro: `))
+
+        } while (isNaN(num2) || num1 === num2)
+
+        // Operação
+        if(num1 < num2){
+            i = num1
+            f = num2
+        } else{
+            i = num2
+            f = num1
+        }
+        window.document.write(`O menor valor informado foi ${i}, o maior valor foi ${f}<br>Números que serão somados: `)
+        for(i; i <= f; i++){
+            document.write(`[ ${i} ] `)   
+            soma += i
+        }
+        window.document.write(`<br>A soma dos itens é ${soma}`)
+    </script>
+</body>
+</html>
