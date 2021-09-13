@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função</title>
+</head>
+<body>
+    
+    <script>
+        // DECLARAÇÃO DE FUNÇÃO
+        // calcFatorial -> nome da função
+        // num -> parâmetro ou argumento (dado de entrada)
+
+        function calcFatorial(num) {
+            fatorial = 1
+            for(let i = num; i > 1; i--){
+                fatorial *= i
+            }
+            return fatorial // dado de saída
+        }
+
+        // Chamada à função
+        // A variável fat4 receberá o resultado da função
+        // enviado pelo return
+        let fat4 = calcFatorial(4)
+
+        document.write(`4! é igual a ${fat4}.<br>`)
+
+
+        // CHAMADA À FUNÇÃO sem atribuição a variável
+        document.write(`6! é igual a ${calFatorial(6)}. <br>`)
+
+        // Chamada a uma função da biblioteca Math do JS
+        document.write(`A raiz quadrada de 3 é ${Math.sqrt(3)}. <br>`)
+
+        let int 
+
+        do {
+            int = prompt("Informe um númerio inteiro maior que 1: ")
+        } while(isNaN(int) || int <= 1)
+
+        document.write(`${int}! é igual a ${calcFatorial(int)}. <br>`)
+
+        
+
+    </script>
+</body>
+</html>

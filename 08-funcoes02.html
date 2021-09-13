@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função 02</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Se forem dadas as medidas de base e da altura das formas
+            geométricas retângula, triângulo e elipse, é possível
+            calcular a respectiva área aplicando a fórmula matemática
+            apropriada
+        */
+
+        // Declaraação de função que calcula a área de uma forma geométrica
+        // A partir das medidas da base e da altura de forma 
+        // calcArea -> nome da função
+        // Base, altura, tipo -> parâmetros ou argumentos (dados de entrada)
+
+        function calcArea(base, altura, tipo){
+            let area 
+
+            switch(tipo){
+                case 'R':       // Retângulo
+                    area = base * altura 
+                    break
+
+                case 'T':       // Triângulo
+                    area = base * altura / 2
+                    break
+                
+                case 'E':       // Elipse
+                    area = (base / 2) * (altura / 2) * Math.PI
+                    break
+
+                default:        // Forma não reconhecida
+                    area = null
+
+            }
+            return area 
+        }
+
+        // Chamadas à função
+        document.write(`Retângulo de 10X15: ${calcArea(10, 15, 'R')}<br>`)
+
+        let y = 20, x = 12, t = 'T'
+        document.write(`Triângulo de 12X20: ${calcArea(x, y, t)}<br>`)
+
+        do {
+            x = Number(prompt('Informe o valor da base: '))
+        }while(isNaN(x) || x <= 0)
+
+        do {
+            y = Number(prompt('Informe o valor da altura: '))
+        }while(isNaN(y) || x <= 0)
+
+        do {
+            t = prompt('Informe o tipo de forma (R, T ou E):')
+        }while(t !== "R" && t !== "T" && t !=="E")
+
+        document.write(`A área da forma ${t} de ${x} x ${y} é ${calcArea(x, y, t)}<br>`)
+
+
+    </script>
+</body>
+</html>
