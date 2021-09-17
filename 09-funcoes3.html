@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções 3</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            FUNÇÕES SEM RETORNO
+            São funções que desempenham uma tarefa, mas não retornam um valor como resultado
+        */
+
+        function desenharTraco(tamanho) {
+            for(let i =1; i <= tamanho; i++){
+                document.write('-')
+            }
+            document.write('<br>')
+        }
+
+        // Chamadas de Função. Note que não há atribuição das chamadas
+        // A variáveis, uma vez que a função não retorna valor
+        let x = desenharTraco(50)
+        document.write(`O valor da variável x é ${x}<br>`)
+        desenharTraco(50)
+        desenharTraco(30)
+        desenharTraco(75)
+
+
+        /*
+            FUNÇÃO SEM PARÂMETRO
+            Uma função pode não precisar de informações externas para fazer o seu trabalho. 
+            Nesse caso, os parênteses que seguem o nome da função permanecem, tanto na declaração
+            quanto na chamada da função
+
+        */
+       function agora() {
+           let hoje = new Date()
+           return hoje.getHours() + ':' + hoje.getMinutes() + ':' + hoje.getSeconds()
+       }
+       document.write(`Hora atual: ${agora()}<br>`)
+
+       // função sem parâmetro e sem retorno
+       function saudacao() {
+           let hoje = new Date()
+           let hora = hoje.getHours()
+
+           if(hora < 12){
+               document.write('Bom dia!<br>')
+           } else if(hora < 18) {
+               documet.write('Boa tarde!<br>')
+           } else {
+               document.write('Boa noite!<br>')
+           }
+       }
+    </script>
+</body>
+</html>
