@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+
+    <script>
+        /*
+            Peça ao usuário para que informe um número entre 1 e 100 e um caractere,
+            que deve ser diferente de espaço em branco. Use um prompt() para colher
+            cada um desses dados e faça as validações correspondentes.
+            
+            Escreva uma função que recebe como parâmetros um número e um caractere
+            e gere no documento um padrão de texto conforme o exemplo abaixo. Essa
+            função deve apenas desenhar o padrão, sem retornar valor algum.
+            
+            Se o caractere informado for * e o número selecionado for 11, serão
+            geradas 11 linhas de padrão de texto, a primeira linha contendo            
+            uma vez o caractere, a segunda linha contendo o caractere duas            
+            vezes, e assim por diante:            
+            *            
+            **            
+            ***            
+            ****           
+            *****            
+            ******            
+            *******            
+            ********            
+            *********            
+            **********            
+            ***********            
+            Não se esqueça de fazer a chamada à função para executá-la e exibir o resultado            
+            no documento.        
+            
+        */
+        let num, caracter, resultado
+        do{
+            num = parseInt(prompt('Informe um número inteiro entre 1 e 100: '))
+        } while(isNaN(num) || num < 0 || num > 100)
+        do{
+            caracter = prompt('Informe apenas um caracter: ')
+        } while(caracter.length > 1 || caracter.length === 0)
+
+        window.write(resultado(num, caracter))
+
+        function resultado(num, caracter){
+            let res
+            for(let i = 1; i <= num; i++){
+                
+            }
+        }
+        
+
+
+
+    </script>
+    
+</body>
+</html>
