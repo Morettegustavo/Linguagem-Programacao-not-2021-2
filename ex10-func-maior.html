@@ -15,20 +15,24 @@
         */
 
         function maior(num1, num2){
+            // Entrada de dados
             let resultado
+
             if(num1 > num2){
-                resultado = num1  
+                // resultado = num1
+                return num1  
             } else if(num2 > num1){
-                resultado = num2
-            } else if(num1 == num2){
-                resultado = undefined
+                // resultado = num2
+                return num2
+            } else{     // Os números são iguais entre si
+                // resultado = undefinet
+                return undefined
             }
-            return resultado
         }
 
-        document.write(`O maior número entre 8 e 11 é ${8, 11} .<br>`)
-        document.write(`O maior número entre 6 e 2 é ${6, 2} .<br>`)
-        document.write(`O maior número entre 7 e 7 é ${7, 7} .<br>`)
+        document.write(`O maior número entre 8 e 11 é ${maior(8, 11)} .<br>`)
+        document.write(`O maior número entre 6 e 2 é ${maior(6, 2)} .<br>`)
+        document.write(`O maior número entre 7 e 7 é ${maior(7, 7)} .<br>`)
     </script>
 </body>
 </html>
