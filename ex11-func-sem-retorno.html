@@ -37,23 +37,26 @@
             no documento.        
             
         */
-        let num, caracter, resultado
+        let num, caracter
         do{
             num = parseInt(prompt('Informe um número inteiro entre 1 e 100: '))
         } while(isNaN(num) || num < 0 || num > 100)
+
         do{
             caracter = prompt('Informe apenas um caracter: ')
-        } while(caracter.length > 1 || caracter.length === 0)
+        } while(caracter.length !== 1 || caracter.length === " ")
 
-        window.write(resultado(num, caracter))
-
-        function resultado(num, caracter){
-            let res
-            for(let i = 1; i <= num; i++){
-                
+        // Declararação de função sem valor de retorno
+        function desenhar(num, caracter){
+            // For do eixo y (vertical)
+            for(let y = 1; y <= num; y++){
+                let linha = caracter.repeat(y)
+                document.write(linha + '<br>')
             }
         }
         
+        // Chamada da função
+        desenhar(num, caracter)
 
 
 
