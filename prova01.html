@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 01</title>
+</head>
+<body>
+    
+
+    <script>
+        // Entrada de dados
+        let dia, mes, ano
+        // Entrada de dia
+        do{
+            dia = parseInt(prompt(`Informe o dia de nascimento: `))
+        } while(isNaN(dia) || dia < 1 || dia > 31)
+
+        // Entrada do mes
+        do{
+            mes = parseInt(prompt(`Informe o mês de nascimento: `))
+        }while(isNaN(mes) || mes < 1 || mes > 12)
+
+        // entrada do ano
+        do{
+            ano = parseInt(prompt(`Informe um ano entre 1921 e 2021: `))
+        } while(isNaN(ano) || ano < 1921 || ano > 2021)
+
+        function executar(dia, mes, ano){
+            // Entrada de dados 
+            let soma, resultado
+
+            soma = (ano + mes) * dia
+            
+            resultado = soma % 4
+            return resultado
+        }
+        var res = executar(dia, mes, ano) 
+
+        switch (res){
+            case 1:
+                document.write(`Casa Gado Demais`)
+                break;
+            case 2:
+                document.write(`Casa Galo de Rinha`)
+                break;
+            case 3:
+                document.write(`Casa Lacraste`)
+                break;
+            case 4:
+                document.write(`Casa Smiliguido`)
+        }
+    </script>
+</body>
+</html>
