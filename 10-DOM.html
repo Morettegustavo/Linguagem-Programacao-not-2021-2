@@ -9,11 +9,11 @@
 <body>
     <h1>Document Object Model (DOM)</h1>
 
-    <ol>
-        <li>São Paulo</li>
-        <li>Minas Gerais</li>
-        <li>Rio de Janeiro</li>
-        <li>Espírito Santo</li>
+    <ol id="estados">
+        <li id="sp">São Paulo</li>
+        <li id="mg">Minas Gerais</li>
+        <li id="rj">Rio de Janeiro</li>
+        <li id="es">Espírito Santo</li>
     </ol>
 
     <script>
@@ -37,6 +37,19 @@
         itens[2].style.color = 'blue'
 
         let a = document.getElementById
+
+        // Capturando um elemento pelo id - existem duas formas 
+        let itemMg = document.getElementById('mg') // Forma clássica
+        itemMg.style.color = "darkgreen"
+
+        // Forma moderna - note que é necessário colocar o # antes do id 
+        let itemEs = document.getElementById('#es')
+        itemEs.style.fontWeight = 'bold'
+
+        let listaOrd = document.getElementById('estados')
+        // Muda o marcador da lista
+        listaOrd.type = 'A'
+
     </script>
 </body>
 </html>
