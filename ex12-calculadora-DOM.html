@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+
+        #resultado{
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            background-color: rgb(77, 77, 228);
+            width: 300px;
+            height: 40px;
+            border-radius: 30px;
+        }
+    </style>
+    <title>Calculadora DOM</title>    
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Soma (+)</option>
+            <option>Subtração (-)</option>
+            <option>Multiplicação (*)</option>
+            <option>Divisão (/)</option>
+        </select>
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+
+    <div id="resultado">Aqui vem o resultado.</div>
+
+    <script>
+        // Capturar elementos do HTML
+        const num1 = window.document.getElementById('num1')
+        const oper = window.document.getElementById('oper')
+        const num2 = window.document.getElementById('num2')
+        const calcular = window.document.getElementById('calcular')
+
+        // validar os dados de entrada
+        function validar(){
+            if(num1.value === ""){
+                alert('[ERRO]: o primeiro valor não foi informado.')
+                num1.focus()
+                return false
+            }
+            if(num2.value === ""){
+                alert('[ERRO]: o segundo valor não foi informado.')
+                num2.focus()
+                return false
+            }
+            if(oper.selectedIndex <= 0){
+                alert('Selecione uma forma de tratamento.')
+                oper.focus()
+                return false
+            }
+            
+            return true
+        }
+        function executar(){
+            if(validar()){
+                num1 = Number(num1.value)
+                num2 = Number(num2.value)
+                let resultadoOperacao = ""
+
+                switch (oper.selectedIndex){
+                    case 1:
+                        resultadoOperacao = (`${num1} + ${num2} = ${num1 + num2}`)
+                        break
+                    case 2:
+                        resultadoOperacao = (`${num1} - ${num2} = ${num1 - num2}`)
+                        break
+                    case 3:
+                        resultadoOperacao = (`${num1} * ${num2} = ${num1 * num2}`)
+                        break
+                    case 4:
+                        resultadoOperacao = (`${num1} / ${num2} = ${num1 / num2}`)
+                }
+                window.document.getElementById('resultado').innerHTML = resultadoOperacao
+            }
+        }
+
+        calcular.addEventListener('click', executar)
+    </script>
+</body>
+</html>
