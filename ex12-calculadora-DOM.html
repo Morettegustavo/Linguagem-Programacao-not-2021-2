@@ -17,6 +17,9 @@
             height: 40px;
             border-radius: 30px;
         }
+        label{
+            display: block;
+        }
     </style>
     <title>Calculadora DOM</title>    
 </head>
@@ -52,38 +55,39 @@
 
     <script>
         // Capturar elementos do HTML
-        const num1 = window.document.getElementById('num1')
-        const oper = window.document.getElementById('oper')
-        const num2 = window.document.getElementById('num2')
-        const calcular = window.document.getElementById('calcular')
+        const num1 = document.getElementById('num1')
+        const num2 = document.getElementById('num2')
+        const oper = document.getElementById('oper')
+        const calcular = document.getElementById('calcular')
+        let resultado = document.getElementById('resultado')
+        let resultadoOperacao
 
         // validar os dados de entrada
         function validar(){
-            if(num1.value === ""){
+            if (num1.value === ""){
                 alert('[ERRO]: o primeiro valor não foi informado.')
                 num1.focus()
                 return false
             }
-            if(num2.value === ""){
+            if (num2.value === ""){
                 alert('[ERRO]: o segundo valor não foi informado.')
                 num2.focus()
                 return false
             }
-            if(oper.selectedIndex <= 0){
+            if (oper.selectedIndex <= 0){
                 alert('Selecione uma forma de tratamento.')
                 oper.focus()
+                num1 = Number(num1)
+                num2 = Number(num2)
                 return false
             }
-            
-            return true
-        }
-        function executar(){
-            if(validar()){
-                num1 = Number(num1.value)
-                num2 = Number(num2.value)
-                let resultadoOperacao = ""
 
-                switch (oper.selectedIndex){
+            return true   
+        }
+
+        function executar(){
+            if(validar()) {
+                switch(oper.selectedIndex){
                     case 1:
                         resultadoOperacao = (`${num1} + ${num2} = ${num1 + num2}`)
                         break
@@ -96,7 +100,7 @@
                     case 4:
                         resultadoOperacao = (`${num1} / ${num2} = ${num1 / num2}`)
                 }
-                window.document.getElementById('resultado').innerHTML = resultadoOperacao
+                resultado.textContent = resultadoOperacao
             }
         }
 
