@@ -55,9 +55,9 @@
 
     <script>
         // Capturar elementos do HTML
-        let num1 = document.getElementById('num1')
-        let num2 = document.getElementById('num2')
-        let oper = document.getElementById('oper')
+        const num1 = document.getElementById('num1')
+        const num2 = document.getElementById('num2')
+        const oper = document.getElementById('oper')
         const calcular = document.getElementById('calcular')
         const resultado = document.getElementById('resultado')
         let resultadoOperacao
@@ -84,8 +84,8 @@
 
         function executar(){
             if(validar()) {
-                let num1 = Number(document.getElementById('num1').value)
-                let num2 = Number(document.getElementById('num2').value)
+                const num1 = Number(document.getElementById('num1').value)
+                const num2 = Number(document.getElementById('num2').value)
                 switch(oper.selectedIndex){
                     case 1:
                         resultadoOperacao = (`${num1} + ${num2} = ${num1 + num2}`)
