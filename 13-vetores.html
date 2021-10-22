@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            * VETORES
+            *
+            *  - Vetores permitem que vários valores sejam armazenados
+            *  em uma única variável
+            *  - Os valores são armazenados em posições numerados, em que a primeira posição recebe o número ZERO (0)
+            * 
+            * 
+            * // 1) Criação de um vetor vazio
+            * Em JavaScript, não se especifica tamanho máximo do vetor
+            * quando de sua criação
+            * 
+        */
+       let vetorVazio1 = []         // Forma moderna
+       let vetorVazio2 = Array()    // Forma tradicional
+
+       // 2) Criação de um vetor já com valores
+        let numeros1 = [10, 20, 30, 40]         // Forma moderna
+        let numeros2 = Array(10, 20, 30, 40)    // Forma tradicional
+       // 3) Vetores podem armazenar qualquer tipo de dado, inclusive misturando-os em um mesmo vetor
+
+       // Vetor de strigns
+        let frutas = ['maça', 'banana', 'pera', 'uva', 'laranja']
+
+        // Vetor de tipos diversos
+        let mix = ['Fulano de Tal', 15, 1.68, 58.5, false]
+
+        // 4) Acessando os valores armazenados em um vetor
+        // Usa-se o nome do vetor seguido de um par de colchetes
+        //  especificando a posição desejada
+
+        // Exivindo o primeiro elemento do vetor de frutas
+        document.write(`Primeira fruta: ${frutas[0]}<br>`)
+
+        // Exibindo a terceira fruta
+        document.write(`Terceira fruta: ${frutas[2]}<br>`)
+
+        // 5) Determinando quantos elementos há em um vetor: length
+        document.write(`Quantidade de elementos no vetor frutas: ${frutas.length}<br>`)
+
+        // Sabendo determinar a quantidade de elementos com length, como acessar o ÚLTIMO elemento do vetor?
+        document.write(`Última fruta: ${frutas[frutas.length - 1]}<br>`)
+
+        // Alterando a primeira posição do vetor:
+        frutas[0] = 'jabuticaba'
+        document.write(frutas + '<br>')
+
+        // Alterar a QUARTA fruta do vetor
+        frutas[3] = 'melancia'
+        document.write(frutas + '<br>')
+
+        // Alterando a última fruta
+        frutas[frutas.length - 1] = 'morango'
+        document.write(frutas + '<br>')
+
+        // Acrescentando uma nova fruta no final do vetor
+        frutas.push('amora')
+        document.write(frutas + '<br>')
+
+        // 5) Determinando quantos elementos há em um vetor: length
+        document.write(`Quantidade de elementos no vetor frutas: ${frutas.length}<br>`)
+
+        document.write('<hr>')
+        /**************************************************************************/
+        let carros = []
+
+        // Inserção no FINAL do vetor: push()
+        carros.push('Corcel')
+        carros.push('Fusca', 'Belina')
+        carros.push('Opala')
+        document.write(carros + '<br>')
+
+        // Inserção no início do vetor: unshift()
+        carros.unshift('Gol')
+        document.write(carros + '<br>')
+        carros.unshift('Brasília', 'Chevette')
+        document.write(carros + '<br>')
+
+        // Inserção em posição intermediário: splice()
+        // Parâmetros:
+        // 1º: a posição em que o(s) novo(s) elemento(s) será inserido
+        // 2º: Quantos elementos serão APAGADOS? Na casa de inserção, 0
+        // 3º: o(s) novo(s) elementos(s)
+        carros.splice(3, 0, 'Variant')
+        document.write(carros + '<br>')
+        carros.splice(6, 0, 'Maverick', 'Del Rey')
+        document.write(carros + '<br>')
+
+        // Remoção do final do vetor: pop()
+        let ultimo = carros.pop()
+        document.write(`Último: ${ultimo} <br>`)
+        document.write(carros + '<br>')
+
+        // Remoção do início do vetor: shift()
+        let primeiro = carros.shift()
+        document.write(`Primeiro: ${primeiro} <br>`)
+        document.write(carros + '<br>')
+
+        // Remoção do meio do vetor: splice()
+        // Parâmetro:
+        // 1º posição para remoção
+        // 2º quantidade de elementos a remover (1+)
+        let removido4 = carros.splice(4, 1)
+        document.write(`Removido da posição 4: ${removido4}<br>`)
+
+        let removidos123 = carros.splice(1, 3)
+        document.write(`Removidos 1, 2, 3: ${removidos123}<br>`)
+        document.write(carros + '<br>')
+
+        // Usando splice() para substituição
+        carros.splice(2, 1, 'Santana')
+        document.write(carros + '<br>')
+    </script>
+</body>
+</html>
