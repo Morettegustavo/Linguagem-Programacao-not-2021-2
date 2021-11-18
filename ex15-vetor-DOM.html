@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+</head>
+<body>
+    <h1>Estados do Sudeste e do Sul do Brasil</h1>
+    <ul id="estados">
+
+    </ul>
+    <script>
+                
+        /*
+            1) Crie um vetor vazio.
+            2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
+               no vetor:
+               São Paulo
+               Santa Catarina
+               Rio Grande do Sul
+               Rio de Janeiro
+               Paraná
+               Minas Gerais
+               Espírito Santo
+            3) Percorra o vetor com um loop for..of, crie um item de lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
+        */
+
+            // Questão 1
+            let estados = [] //vetor vazio 
+
+            // Questão 2
+            estados.unshift('São paulo', 'Santa Catarina', 'Rio Grande do Sul','Rio de Janeiro', 'Paraná', 'Minas gerais', 'Espírito Santo' )
+        
+            // Questão 3
+            for(let valores of estados ) {
+                const itens = document.createElement("li")
+                itens.textContent = valores
+
+                const est = document.getElementById("estados")
+                est.appendChild(itens)
+            }
+                  
+    </script>
+</body>
+</html>
