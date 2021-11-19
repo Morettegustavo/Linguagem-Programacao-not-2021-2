@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Minicadastro de pacientes em vetor
+        let paciente1 = ['Daniela Dutra', 19, 'F', 'daniela@gmail.com', 1.68, 64]
+        let paciente2 = ['Geraldo Gomes', 57, 'M', 'geraldo@bol.com.br', 1.78, 90]
+        let paciente3 = ['Abílio Azevedo', 40, 'M', 'abilio@yahoo.com.br', 1.72, 65]
+        let paciente4 = ['Noemia Nogueira', 64, 'F', 'noemia@uol.com.br', 1.75, 81]
+
+        // Calculando o índice de massa corpórea (IMC) do Paciente 3
+        let imc3 = paciente3[5] / paciente3[4] ** 2
+        document.write(`O IMC de ${paciente3[0]} é ${imc3.toFixed(4)}<br>`)
+
+        /**************************************************
+         * OBJETOS
+         * São estruturas da linguagem JS que permitem armazenar 
+         * Vários valores dentro de uma única variável, em posições
+         * NOMEADAS (e não numeradas, como no vetor).
+         *************************************************/
+        
+        // Criação de um objeto vazio
+        let vazio1 = {}                 // Forma mais recente
+        let vazio2 = new Object()       // Forma tradicional
+
+        // Refazendo o Paciente 1 como objeto
+        let paciente1obj = {}
+
+        // As posições de um objeto são chamadas ATRIBUTOS ou PRPRIEDADES
+        paciente1obj.nome = 'Daniela Dutra'
+        paciente1obj.idade = 19
+        paciente1obj.sexo = 'F'
+        paciente1obj.email = 'daniela@gmail.com'
+        paciente1obj.altura = 1.68
+        paciente1obj.peso = 64
+
+        //document.write(JSON.stringify(paciente1obj))
+        console.log({paciente1})
+        console.log({paciente1obj})
+
+        // Propriedade podem ser criadas no objeto em qualquer order
+        let paciente2obj = {}
+        paciente2obj.email = 'geraldo@bol.com.br'
+        paciente2obj.idade = 57
+        paciente2obj.peso = 90
+        paciente2obj.sexo = 'M'
+        paciente2obj.nome = 'Geraldo Gomes'
+        paciente2obj.altura = 1.78
+
+        // Calculando o IMC do Paciente 2
+        let imc2 = paciente2obj.peso / paciente2obj.altura ** 2
+        document.write(`O IMC de ${paciente2obj.nome} é ${imc2.toFixed(4)}. <br>`)
+
+        // Objetos podem ser criados já com propriedades
+        let paciente3obj = {
+            nome: 'Abílio Azevedo',
+            idade: 40,
+            sexo: 'M',
+            email: 'abilio@yahoo.com.br',
+            altura: 1.72,
+            peso: 65
+        }
+
+        // Acrescentando o atributo ' documento de identidade' a Paciente 3
+
+        // Quando o n ome do atributo contém ESPAÇOS  ou ACENTOS, não é possível
+        // usar o ponto entre a variável do objeto e o nome do atributo. A solução
+        // é usar a SINTAXE DOS COLCHETES
+        paciente3obj['documento de identidade'] = '22.333.444-5'
+        
+        // A sintaxe dos colchetes SEMPRE FUNCIONA. Acabamos usando mais a sintaxe
+        // do ponto porque economiza digitação, nos casos em que pode ser usado
+        paciente3obj['naturalidade'] = 'Belo Horizonte/MG'
+        paciente3obj['país'] = 'Brasil'
+
+        console.log({paciente3obj})
+    </script>
+</body>
+</html>
