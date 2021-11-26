@@ -83,6 +83,38 @@
         paciente3obj['país'] = 'Brasil'
 
         console.log({paciente3obj})
+
+        // Muitas vezes, temos o s nomes das propriedades de um objeto dentro de um vetor
+
+        const props = [
+            'nome',
+            'idade',
+            'sexo',
+            'email',
+            'altura',
+            'peso',
+            'documento de identidade',
+            'país',
+            'naturalidade'
+        ]
+
+       document.write('<br>')
+       document.write('<hr>')
+
+        // Nesse caso, podemos percorrer o vetor de propriedades e, usando a sintaxe dos colchetes, exibir o valor de cada propriedade
+
+        // 1º Usando um for tradicional
+        for(let i = 0; i < props.length; i++) {
+            document.write(`${props[i]} => ${paciente3obj[props[i]]} <br>`)
+        }
+
+        document.write('<br>')
+        document.write('<hr>')
+        
+        // 2) Usando for..of
+        for(let prop of props) {
+            document.write(`${prop} => ${paciente3obj[prop]} <br>`)
+        }
     </script>
 </body>
 </html>
