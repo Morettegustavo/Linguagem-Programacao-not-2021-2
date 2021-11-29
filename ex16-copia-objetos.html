@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            1) Declare um objeto pet1 que represente um cão e preencha as
+            seguintes propriedades:
+            - nome
+            - raça
+            - cor
+            - sexo
+            - nome do pai (nome da propriedade com espaços)
+            - nome da mãe (nome da propriedade com espaços)
+            2) Crie um objeto pet2, copiando do primeiro:
+            let pet2 = pet1
+            E troque algumas das características de pet2
+            3) Use dois for..in para listar os objetos: pet1 e pet2
+            
+        */
+
+       // 1 
+       let pet1 = {}
+
+       pet1.nome = 'Linguiça'
+       pet1['Raça'] = 'Vira-latas'
+       pet1.cor = 'Caramelo'
+       pet1.sexo = 'F'
+       pet1['nome do pai'] = 'Totô'
+       pet1['nome da mãe'] = 'Baleia'
+
+       // 2
+       let pet2 = {...pet1}
+
+       pet2.nome = 'Marreta'
+       pet2['raça'] = 'Pitbull'
+       pet2.sexo = 'M'
+
+       // 3
+       document.write('Pet 1 <br>')
+       for(let prop in pet1){
+           document.write(`${prop} => ${pet1[prop]} <br>`)
+       }
+
+       document.write('<hr>')
+       document.write('Pet 2 <br>')
+       for(let prop in pet2){
+           document.write(`${prop} => ${pet2[prop]} <br>`)
+       }
+    </script>
+</body>
+</html>
