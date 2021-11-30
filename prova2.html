@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Tabuada</title>
+
+    <style>
+        * {
+            font-family: 'Amaranth', 'Candara', Arial, sans-serif;
+        }
+
+        html,
+        body {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-size: 12pt;
+            line-height: 18pt;
+            color: #444;
+        }
+
+        body {
+            background-color: darkslateblue;
+            background-image: linear-gradient(indigo 50%, darkslateblue);
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+        body>div {
+            background: whitesmoke;
+            margin: 3%;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: darkslateblue;
+            text-shadow: 2px 2px 2px rgba(27, 94, 32, 0.5);
+
+        }
+
+        div>div {
+            padding: 10px;
+            width: 70%;
+            max-width: 90%;
+            min-width: 250px;
+            margin: 1% auto;
+            text-align: center;
+        }
+
+        div label {
+            display: block;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 8px;
+            border-radius: 8px;
+            color: white;
+            background-color: darkslateblue;
+        }
+
+        p {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        div div:last-of-type {
+            background-color: #c8e6c9;
+            border-radius: 12px;
+        }
+    </style>  
+
+    <script>
+            
+        const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+        const formaTrat = parseInt(document.querySelector('#forma-trat'))
+        const visualizar = document.getElementById('visualizar')
+
+        // Criando uma função que recebe um número inteiro 
+        function numInteiro(num){
+            for (let i = 0; i < multipl.length; i++) {
+                // Criando um parágrafo
+                const itens = document.createElement("p")
+                // Colocando dentro da propriedade textContent
+                itens.textContent = (`${num} * ${i} = ${num * i}`)
+                const tabuada = document.getElementById("tabuada")
+                tabuada.appendChild(itens)
+            }
+        }
+
+        function verificar(){
+            numInteiro(formaTrat)
+        }
+
+        visualizar.addEventListener('click', verificar) 
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <h1>Tabuada</h1>
+
+        <div>
+            <label>Escolha um número para visualizar a tabuada:</label>
+            <select id="forma-trat">
+               <option>(Selecione)</option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>
+               <option>4</option>
+               <option>5</option>
+               <option>6</option>
+               <option>7</option>
+               <option>8</option>
+               <option>9</option>
+            </select>
+        </div>
+
+        <div>
+            <button id="visualizar">Visualizar!</button>
+        </div>
+
+        <div id="tabuada"></div>
+    </div>
+
+</body>
+
+</html>           
